@@ -2,7 +2,7 @@
 * Prefixed by https://autoprefixer.github.io
 * PostCSS: v8.4.14,
 * Autoprefixer: v10.4.7
-* Browsers: last 4 version
+* Browsers: last 3 version
 */
 
 /*
@@ -15,10 +15,19 @@ Slate Gray: #748386;
 Dim Gray: #706563;
  */
 
+:root {
+  --primary-color: #6A3937;
+  --secondary-color: #3B0D11;
+  --platinum: #EAE9E6;
+  --slate-grey: #748386;
+  --burgundy: #331337;
+  --header-font: 'Gloock', serif;
+}
+
 body {
-    background-color: #6A3937;
+    background-color: var(--primary-color);
     font-family: 'DM Sans', sans-serif;
-    color: #EAE9E6;
+    color: var(--platinum);
     font-weight: 400;
     font-size: 16px;
     /* Sets the font size to 16px */
@@ -32,31 +41,33 @@ body {
 }
 
 h1 {
-    font-family: 'Gloock', serif;
+    font-family: var(--header-font);
     font-size: 30px;
     font-weight: 700;
+    letter-spacing: 1px;
 }
 
 h2 {
-    font-family: 'Gloock', serif;
+    font-family: var(--header-font);
     font-size: 24px;
     font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 h3 {
-    font-family: 'Gloock', serif;
+    font-family: var(--header-font);
     font-size: 18px;
     font-weight: 500;
 }
 
 a {
     /* changes links on work and contact page?*/
-    color: #EAE9E6;
+    color: var(--platinum);
 }
 
 a:visited {
     /* visited link, default color of link when loaded*/
-    color: #EAE9E6;
+    color: var(--platinum);
 }
 
 a:hover {
@@ -66,34 +77,15 @@ a:hover {
 
 a:active {
     /* selected link, color when link is held down */
-    color: #748386;
+    color: var(--slate-grey);
 }
 
-button {
+button, .button {
     border: none;
     display: inline-block;
     font-family: inherit;    
-    background-color: #EAE9E6;
-    color: #3B0D11;
-    font-weight: 800;
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 3px;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-    -webkit-transition-duration: 0.5s;
-         -o-transition-duration: 0.5s;
-            transition-duration: 0.5s;
-    -webkit-transition-property: opacity;
-    -o-transition-property: opacity;
-    transition-property: opacity;
-}
-
-.button {
-    border: none;
-    display: inline-block;
-    font-family: inherit;    
-    background-color: #EAE9E6;
-    color: #3B0D11;
+    background-color: var(--platinum);
+    color: var(--secondary-color);
     font-weight: 800;
     text-decoration: none;
     padding: 10px;
@@ -112,13 +104,35 @@ button:hover, button:focus, .button:hover, .button:focus {
     opacity: 0.8;
 }
 
+table {
+    border-spacing: 15px;
+}
+
+th, td {
+    padding-right: 40px;
+    text-align: left; 
+}
+
+.logo-name{
+    font-family: 'Dawning of a New Day', cursive;
+    font-size: 30px;
+    font-weight: 400;
+    color: var(--platinum);
+    padding-left: 20px;
+    padding-top: 7px;
+    margin-top: 0;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
 .page-header {
-    background-color: #3B0D11;
+    background-color: var(--secondary-color);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     width: 100%;
-    padding: 20px;
+    padding: 20px 40px;
+    /*filter: drop-shadow(0px 2px 1px #300C0F)*/
 }
 
 .page-header__item {
@@ -156,8 +170,9 @@ button:hover, button:focus, .button:hover, .button:focus {
 
 .profile {
     min-width: 360px;
-    max-width: 700px;
+    max-width: 800px;
     margin: 0 auto;
+    padding-top: 50px;
 }
 
 .page-footer {
@@ -170,10 +185,26 @@ button:hover, button:focus, .button:hover, .button:focus {
         -ms-flex-direction: column;
             flex-direction: column;
     text-align: center;
+    padding-top: 60px;
+    padding-bottom: 30px;
+}
+
+.social-media{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 80px 80px 80px;
+    grid-template-columns: 80px 80px 80px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 0px;
+    padding: 0px;
 }
 
 .about-page-footer {
-    background-color: #331337;
+    background-color: var(--burgundy);
+    margin-top: -50px;
+    padding-bottom: 30px;
     clear: both;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -185,48 +216,58 @@ button:hover, button:focus, .button:hover, .button:focus {
     text-align: center;
 }
 
+.page-title{
+    text-align: center;
+}
+
 .grid {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 300px 20px 300px 20px 300px;
-    grid-template-columns: 300px 300px 300px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-grid-columns: 400px 20px 310px 20px 350px;
+    grid-template-columns: 400px 310px 350px;
     -ms-grid-rows: 300px 20px 300px;
     grid-template-rows: 300px 300px;
     grid-gap: 20px;
 }
 
 .grid > *:nth-child(1) {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
 }
 
 .grid > *:nth-child(2) {
-    -ms-grid-row: 1;
-    -ms-grid-column: 3;
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
 }
 
 .grid > *:nth-child(3) {
-    -ms-grid-row: 1;
-    -ms-grid-column: 5;
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
 }
 
 .grid > *:nth-child(4) {
-    -ms-grid-row: 3;
-    -ms-grid-column: 1;
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
 }
 
 .grid > *:nth-child(5) {
-    -ms-grid-row: 3;
-    -ms-grid-column: 3;
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
 }
 
 .grid > *:nth-child(6) {
-    -ms-grid-row: 3;
-    -ms-grid-column: 5;
+  -ms-grid-row: 3;
+  -ms-grid-column: 5;
 }
 
 .grid__item {
-  background-color: #3B0D11;
+    background-color: var(--secondary-color);
+    padding-top: 4%;
+    padding-left: 9%;
+    padding-right: 4%;
 }
 
 .grid__item:last-child {
