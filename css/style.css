@@ -36,12 +36,14 @@ h1 {
     font-family: var(--header-font);
     font-size: 30px;
     font-weight: 700;
+    letter-spacing: 1px;
 }
 
 h2 {
     font-family: var(--header-font);
     font-size: 24px;
     font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 h3 {
@@ -90,11 +92,33 @@ button:hover, button:focus, .button:hover, .button:focus {
     opacity: 0.8;
 }
 
+table {
+    border-spacing: 15px;
+}
+
+th, td {
+    padding-right: 40px;
+    text-align: left; 
+}
+
+.logo-name{
+    font-family: 'Dawning of a New Day', cursive;
+    font-size: 30px;
+    font-weight: 400;
+    color: var(--platinum);
+    padding-left: 20px;
+    padding-top: 7px;
+    margin-top: 0;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
 .page-header {
     background-color: var(--secondary-color);
     display: flex;
     width: 100%;
-    padding: 20px;
+    padding: 20px 40px;
+    /*filter: drop-shadow(0px 2px 1px #300C0F)*/
 }
 
 .page-header__item {
@@ -128,8 +152,9 @@ button:hover, button:focus, .button:hover, .button:focus {
 
 .profile {
     min-width: 360px;
-    max-width: 700px;
+    max-width: 800px;
     margin: 0 auto;
+    padding-top: 50px;
 }
 
 .page-footer {
@@ -137,25 +162,45 @@ button:hover, button:focus, .button:hover, .button:focus {
     display: flex;
     flex-direction: column;
     text-align: center;
+    padding-top: 60px;
+    padding-bottom: 30px;
+}
+
+.social-media{
+    display: grid;
+    grid-template-columns: 80px 80px 80px;
+    justify-content: center;
+    margin: 0px;
+    padding: 0px;
 }
 
 .about-page-footer {
     background-color: var(--burgundy);
+    margin-top: -50px;
+    padding-bottom: 30px;
     clear: both;
     display: flex;
     flex-direction: column;
     text-align: center;
 }
 
+.page-title{
+    text-align: center;
+}
+
 .grid {
     display: grid;
-    grid-template-columns: 300px 300px 300px;
+    justify-content: center;
+    grid-template-columns: 400px 310px 350px;
     grid-template-rows: 300px 300px;
     grid-gap: 20px;
 }
 
 .grid__item {
-  background-color: var(--secondary-color);
+    background-color: var(--secondary-color);
+    padding-top: 4%;
+    padding-left: 9%;
+    padding-right: 4%;
 }
 
 .grid__item:last-child {
